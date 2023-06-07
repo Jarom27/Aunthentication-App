@@ -4,7 +4,7 @@
         header("location: /profile/index.php");
     }
     else{
-        header("location: signup.php");
+        header("location: signup");
     }
 
 
