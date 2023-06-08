@@ -8,9 +8,9 @@
         private $bio = null;
         private $photo;
         
-        function __construct($id , $email, $password)
+        function __construct($email, $password)
         {
-            $this->id = $id;
+            $this->id = bin2hex(openssl_random_pseudo_bytes(10));
             $this->email = $email;
             $this->password = $password;
         }
@@ -19,6 +19,9 @@
         }
         function getEmail(){
             return $this->email;
+        }
+        function getPassword(){
+            return $this->password;
         }
 
 

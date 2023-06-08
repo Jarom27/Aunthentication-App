@@ -1,23 +1,26 @@
 <?php
+    include("../Services/PersonService.php");
+    include("../Models/Person.php");
     session_start();
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+        require_once "../Views/signup.php";
+    }
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         echo "Hola desde post";
-        $email = $_POST["email"];
         $password = $_POST["password"];
-        try{
-            $conexion = new PDO("mysql:dbname=miniprojecto;host=localhost","root","");
-            $statement = $conexion->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
-            $statement->execute([':email'=>$email]);
-            if($statement->fetch() != false){
-                echo "Usuario ya existe";
-            }else{
-                $statement = $conexion->prepare("INSERT INTO users(email,password) VALUES(:email, :password)");
-                $statement->execute([":email"=>$email,":password" => $password]);
-            }
-        }catch(PDOException $error){
-            echo "Ocurrió un error: ".$error;
+        $pass_hasheada_por_clave = hash_hmac("sha256",$password,getenv("KEY"));
+        $pass_haseada = password_hash($pass_hasheada_por_clave, PASSWORD_BCRYPT);
+        $person = new Person($_POST["email"],$pass_haseada);
+
+        //Añadimos al servicio
+        $personService = new PersonService();
+        $status_service = $personService->addUser($person);
+        if($status_service){
+            echo "Usuario registrado exitosamente";
         }
-        
+        else{
+            echo "No se pudo registrar el usuario";
+        }
         
     }   
 

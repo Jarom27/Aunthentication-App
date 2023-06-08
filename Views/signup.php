@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container vh-100 d-flex justify-content-center align-items-center">
-        <form action="/SignUpController.php" method="post" class="card border border-black p-4" style="width:20rem">
+        <form action="/signup" method="post" class="card border border-black p-4" style="width:20rem">
             <h2>Sign up</h2>
             <input class="form-control" type="email" name="email" placeholder="Email">
             <input class="form-control" type="password" name="password" placeholder="Password">
