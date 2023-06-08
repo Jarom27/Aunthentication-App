@@ -1,4 +1,5 @@
 <?php
+    include("../Models/Person.php");
     class PersonService{
         private $conexion;
         private $statement;
@@ -32,7 +33,14 @@
         function findUserByEmail($email){
             $this->statement = $this->conexion->prepare("SELECT * from users WHERE email = :email LIMIT 1");
             $this->statement->execute([":email" => $email]);
-            return $this->statement->fetch();
+            if($this->statement->fetch()){
+                $user = $this->statement->fetch();
+                print_r($this->statement->fetch());
+                $usuario = new Person($user["email"],$user["password"]);
+                return $usuario;
+            }
+            return null;
+            
         }
     }
 
