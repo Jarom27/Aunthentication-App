@@ -16,7 +16,7 @@
             <h1>Personal info</h1>
             <p>Basic info, like your name and photo</p>
         </div>
-        <div class="card d-flex flex-column" style="width:846px;">
+        <div class="card d-flex flex-column profile-data">
             <div class="w-100 d-flex justify-content-between px-5">
                 <div class="d-flex flex-column">
                     <h2>Profile</h2>

@@ -9,5 +9,36 @@
 </head>
 <body>
     <?php include("header.php")?>
+    <main class="container d-flex h-100 w-100 justify-content-center align-items-center ">
+        <form action=<?php echo "/profile/".$user->getId()?> method="post" class="card profile-data">
+            <div class="card-title">
+                <h2>Change Info</h2>
+                <p>Changes will be reflected to every services</p>
+            </div>
+            <div class="d-flex flex-column container px-5 row-gap-3">
+                
+                <div>
+
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Enter your name" name="name">
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Enter your Bio" name= "bio">
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Enter your phone" name="phone">
+                </div>
+                <div>
+                    <input type="email" class="form-control" placeholder="Enter your Email" name="email">
+                </div>
+                <div>
+                    <input type="password" class="form-control" placeholder="Enter your password" name="password">
+                </div>
+                <input type="submit" value="Enviar" name="PUT">
+            </div>
+            
+        </form>
+    </main>
 </body>
 </html>
