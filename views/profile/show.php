@@ -10,9 +10,7 @@
     <?php include("bootstrap.php")?>
 </head>
 <body>
-    <header>
-
-    </header>
+    <?php include "header.php"?>
     <main class="h-100% container d-flex flex-column justify-content-center align-items-center">
         <div class="text-center">
             <h1>Personal info</h1>
@@ -34,7 +32,7 @@
                         <p>Photo</p>
                     </div>
                     <div class="col-8">
-                        <img style="width: 72px; height: 72px">
+                        <img class="img-profile">
                     </div>
                 </div>
                 <div class="row">
