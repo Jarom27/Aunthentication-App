@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <?php include("bootstrap.php")?>
 </head>
 <body>
@@ -18,10 +18,10 @@
             </div>
             <div class="d-flex flex-column row-gap-3">
                 <div>
-                    <input class="form-control" type="email" placeholder="Email" name="email">
+                    <input class="form-control" type="email" placeholder="Email" name="email" required>
                 </div>
                 <div>
-                    <input class="form-control" type="password" placeholder="Password" name="password">
+                    <input class="form-control" type="password" placeholder="Password" name="password" required>
                 </div>
             </div>
             <input class="btn btn-primary mt-4" type="submit" value="Login">

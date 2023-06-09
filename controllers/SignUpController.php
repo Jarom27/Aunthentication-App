@@ -9,6 +9,7 @@
             $status = $userService->createUser($_POST["email"],$_POST["password"]);
             if($status){
                 echo "usuario creado exitosamente";
+                header("location: /login");
             }
             else{
                 echo "El usuario ya existe";

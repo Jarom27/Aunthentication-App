@@ -34,6 +34,10 @@
             }
             return true;
         }
+        function getUserId($email){
+            $result = $this->dbservice->selectUserByEmail($email);
+            return $result->getId();
+        }
         function loginUser($email,$user_password):bool{
             $password = $this->dbservice->getPasswordFromDB($email);
             if(Crypt::verifyPassword($user_password,$password)){
@@ -42,8 +46,13 @@
             return false;
         }
         function findUserById($id){
-
+            $result = $this->dbservice->selectUserById($id);
+            if($result == null){
+                return false;
+            }
+            return $result;
         }
+        
         //Update 
         function updateUser(User $user){
 

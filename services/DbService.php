@@ -32,7 +32,21 @@
         function selectUserById($id){
             $statement = $this->connection->prepare("SELECT * FROM users WHERE id = :id LIMIT 1");
             $statement->execute([":id" => $id]);
-            echo $statement->fetch();
+            $result = $statement->fetch();
+            
+            if($result == false){
+                return null;
+            }
+
+            $user = new User();
+            $user->setId($result["id"]);
+            $user->setEmail($result["email"]);
+            $user->setPassword($result["password"]);
+            $user->setName($result["name"]);
+            $user->setBio($result["bio"]);
+            $user->setPhoto($result["photo"]);
+
+            return $user;
         }
         function selectUserByEmail($email) {
             $statement = $this->connection->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
