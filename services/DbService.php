@@ -45,7 +45,7 @@
             $user->setName($result["name"]);
             $user->setBio($result["bio"]);
             $user->setPhoto($result["photo"]);
-
+            $user->setPhone($result["phone"]);
             return $user;
         }
         function selectUserByEmail($email) {
@@ -64,7 +64,7 @@
             $user->setName($result["name"]);
             $user->setBio($result["bio"]);
             $user->setPhoto($result["photo"]);
-
+            $user->setPhone($result["phone"]);
             return $user;
             
         }

@@ -5,11 +5,15 @@
     }
 
     require_once "../services/UserService.php";
-    if($_SERVER["REQUEST_METHOD"] == "GET"){
+    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["mode"])) {
+        require_once "../views/profile/edit.php";
+    }
+    else if($_SERVER["REQUEST_METHOD"] == "GET"){
         $userService = new UserService();
         $user = $userService->findUserById($_GET["id"]);
         require_once "../views/profile/show.php";
     }
+    
     
 
 ?>

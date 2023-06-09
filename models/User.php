@@ -6,7 +6,8 @@
         private $password;
         private $bio;
         private $photo;
-
+        private $phone;
+        
         function getId(){
             return $this->id;
         }
@@ -42,6 +43,12 @@
         }
         function setPhoto($photo){
             $this->photo = $photo;
+        }
+        function getPhone(){
+            return $this->phone;
+        }
+        function setPhone($phone){
+            $this->phone = $phone;
         }
 
     }

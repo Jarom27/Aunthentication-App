@@ -42,7 +42,7 @@
                         <p>Name</p>
                     </div>
                     <div class="col-8">
-                        <p>Xan Neal</p>
+                        <p><?php echo $user->getName() ? $user->getName()  : "Vacio"?></p>
                     </div>
                 </div>
                 <div class="row">
@@ -50,7 +50,7 @@
                         <p>Bio</p>
                     </div>
                     <div class="col-8">
-                        <p>I am a software developer and a big fan of devchallenges...</p>
+                        <p><?php echo $user->getBio() ? $user->getBio()  : "Vacio"?></p>
                     </div>
                 </div>
                 <div class="row">
@@ -58,7 +58,7 @@
                         <p>Phone</p>
                     </div>
                     <div class="col-8">
-                        <p>908249274292</p>
+                        <p><?php echo $user->getPhone() ? $user->getPhone()  : "Vacio"?></p>
                     </div>
                 </div>
                 <div class="row">
@@ -66,7 +66,7 @@
                         <p>Email</p>
                     </div>
                     <div class="col-8">
-                        <p>xanthe.neal@gmail.com</p>
+                        <p><?php echo $user->getEmail() ? $user->getEmail()  : "Vacio"?></p>
                     </div>
                 </div>
                 <div class="row">
