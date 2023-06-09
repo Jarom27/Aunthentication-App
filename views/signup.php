@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container vh-100 d-flex justify-content-center align-items-center">
-        <form class="card d-flex flex-column justify-content-center text-center px-5 py-5 rounded rounded-4" style="width: 475px;">
+        <form action="/signup" method="post" class="card d-flex flex-column justify-content-center text-center px-5 py-5 rounded rounded-4" style="width: 475px;">
             <div class="d-flex">
                 <img src="../public/devchallenges.svg" alt="">
             </div>
@@ -18,13 +18,13 @@
             </div>
             <div class="d-flex flex-column row-gap-3">
                 <div>
-                    <input class="form-control" type="email" placeholder="Email">
+                    <input name="email" class="form-control" type="email" placeholder="Email">
                 </div>
                 <div>
-                    <input class="form-control" type="password" placeholder="Password">
+                    <input name="password" class="form-control" type="password" placeholder="Password">
                 </div>
             </div>
-            <input class="btn btn-primary mt-4" type="submit" value="Start coding now ">
+            <input name="enviar" class="btn btn-primary mt-4" type="submit" value="Start coding now ">
             <p>or continue with these social profile</p>
             <div class="d-flex">
 
