@@ -37,6 +37,10 @@
             echo "No se pudo actualizar al usuario";
         }
     }
+    if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST["logout"])){
+        session_destroy();
+        header("Location: /login");
+    }
     
     
 

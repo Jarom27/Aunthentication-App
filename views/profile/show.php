@@ -23,7 +23,7 @@
                     <p>Some info may be visible to other people</p>
                 </div>
                 <div class="d-flex align-items-center">
-                    <button class="btn border px-5 rounded-pill">Edit</button>
+                    <a href=<?php echo "/profile/".$user->getId()."/edit"?> class="btn border px-5 rounded-pill">Edit</a>
                 </div>
             </div>
             <div class="px-5">
@@ -32,7 +32,7 @@
                         <p>Photo</p>
                     </div>
                     <div class="col-8">
-                        <img class="img-profile">
+                        <img src=<?php echo $user->getPhoto() == "" ? "../public/devchallenges.png" :  $user->getPhoto() ?> class="img-profile">
                     </div>
                 </div>
                 <div class="row">

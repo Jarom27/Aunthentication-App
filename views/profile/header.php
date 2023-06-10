@@ -7,9 +7,15 @@
             Profile
         </button>
         <ul class="dropdown-menu">
-            <li><a class="text-decoration-none" href=""><img src="../../public/icons/account-icon.svg" class="icon">My Profile</a></li>
-            <li><a class="text-decoration-none" href=""><img src="../../public/icons/group-icon.svg" class="icon"> Chat</a></li>
-            <li><a class="text-decoration-none" href=""><img src="../../public/icons/logout-icon.svg" class="icon">Logout</a></li>
+            <li class="dropdown-item"><a class="text-decoration-none" href=""><img src="../../public/icons/account-icon.svg" class="icon">My Profile</a></li>
+            <li class="dropdown-item"><a class="text-decoration-none" href=""><img src="../../public/icons/group-icon.svg" class="icon"> Chat</a></li>
+            <li class="dropdown-item">
+                <form action=<?php echo "/profile/".$user->getId()?> method="post">
+                    <button type="submit" class="p-0 btn btn-link text-decoration-none" name="logout">
+                        <img src="../../public/icons/logout-icon.svg" class="icon">Logout</a>
+                </form>
+                
+            </li>
         </ul>
         
     </nav>
