@@ -79,7 +79,7 @@
         }
         function updateUser(User $user){
             $statement = $this->connection->prepare("UPDATE users SET name = :name, email = :email, password = :password, photo = :photo, bio = :bio, phone = :phone WHERE id = :id LIMIT 1");
-            $statement->execute([
+            $status = $statement->execute([
                 ":id" => $user->getId(),
                 ":name" => $user->getName(),
                 ":email" => $user->getEmail(),
@@ -88,6 +88,7 @@
                 ":photo" => $user->getPhoto(),
                 ":phone" => $user->getPhone()
             ]);
+            return $status;
         }
     }
 ?>

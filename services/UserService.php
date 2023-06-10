@@ -38,6 +38,10 @@
             $result = $this->dbservice->selectUserByEmail($email);
             return $result->getId();
         }
+        function getUserEmail($id){
+            $result = $this->dbservice->selectUserById($id);
+            return $result->getEmail();
+        }
         function loginUser($email,$user_password):bool{
             $password = $this->dbservice->getPasswordFromDB($email);
             if($password == false){
@@ -48,6 +52,10 @@
             }
             return false;
         }
+        function getPassword($id){
+            $result = $this->dbservice->selectUserById($id);
+            return $result->getPassword();
+        }
         function findUserById($id){
             $result = $this->dbservice->selectUserById($id);
             if($result == null){
@@ -57,8 +65,16 @@
         }
         
         //Update 
-        function updateUser($id){
-
+        function updateUser($id,User $userToUpdate){
+            $user = $this->findUserById($id);
+            $user->setName($userToUpdate->getName() == "" ? $user->getName() :  $userToUpdate->getName());
+            $user->setEmail($userToUpdate->getEmail() == "" ? $user->getEmail() : $userToUpdate->getEmail());
+            $password = $userToUpdate->getPassword() == "" ? $user->getPassword() : Crypt::encrypt($userToUpdate->getPassword());
+            $user->setPassword($password);
+            $user->setPhone($userToUpdate->getPhone() == "" ? $user->getPhone() : $userToUpdate->getPhone());
+            $user->setBio($userToUpdate->getBio() == "" ? $user->getBio() : $userToUpdate->getBio());
+            $status = $this->dbservice->updateUser($user);
+            return $status;
         }
 
         //Delete 
