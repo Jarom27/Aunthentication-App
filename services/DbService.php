@@ -72,7 +72,22 @@
             $statement = $this->connection->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
             $statement->execute([":email" => $email]);
             $result = $statement->fetch();
+            if(!$result){
+                return false;
+            }
             return $result["password"];
+        }
+        function updateUser(User $user){
+            $statement = $this->connection->prepare("UPDATE users SET name = :name, email = :email, password = :password, photo = :photo, bio = :bio, phone = :phone WHERE id = :id LIMIT 1");
+            $statement->execute([
+                ":id" => $user->getId(),
+                ":name" => $user->getName(),
+                ":email" => $user->getEmail(),
+                ":password" => $user->getPassword(),
+                ":bio" => $user->getBio(),
+                ":photo" => $user->getPhoto(),
+                ":phone" => $user->getPhone()
+            ]);
         }
     }
 ?>

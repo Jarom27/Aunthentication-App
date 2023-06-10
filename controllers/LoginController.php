@@ -6,7 +6,10 @@
         include_once "../services/UserService.php";
         $userService = new UserService();
         if(isset($_POST["email"]) && isset($_POST["password"])){
-            if($userService->loginUser($_POST["email"],$_POST["password"])){
+            if(!$userService->findUserByEmail($_POST["email"])){
+                echo "Usuario no existe";
+            }
+            else if($userService->loginUser($_POST["email"],$_POST["password"])){
                 session_start();
                 $_SESSION["email"] =  $_POST["email"];
                 $id = $userService->getUserId($_POST["email"]);

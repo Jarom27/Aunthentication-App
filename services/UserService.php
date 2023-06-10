@@ -40,6 +40,9 @@
         }
         function loginUser($email,$user_password):bool{
             $password = $this->dbservice->getPasswordFromDB($email);
+            if($password == false){
+                return false;
+            }
             if(Crypt::verifyPassword($user_password,$password)){
                 return true;
             }
@@ -54,7 +57,7 @@
         }
         
         //Update 
-        function updateUser(User $user){
+        function updateUser($id){
 
         }
 
