@@ -73,6 +73,7 @@
             $user->setPassword($password);
             $user->setPhone($userToUpdate->getPhone() == "" ? $user->getPhone() : $userToUpdate->getPhone());
             $user->setBio($userToUpdate->getBio() == "" ? $user->getBio() : $userToUpdate->getBio());
+            $user->setPhoto($userToUpdate->getPhoto() == "" ? $user->getPhoto() : $userToUpdate->getPhoto());
             $status = $this->dbservice->updateUser($user);
             return $status;
         }

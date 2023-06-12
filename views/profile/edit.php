@@ -10,15 +10,18 @@
 <body>
     <?php include("header.php")?>
     <main class="container d-flex h-100 w-100 justify-content-center align-items-center ">
-        <form action=<?php echo "/profile/".$user->getId()?> method="post" class="card profile-data">
+        <form id="put" action=<?php echo "/profile/".$user->getId()?> method="post" class="card profile-data" enctype="multipart/form-data">
             <div class="card-title">
                 <h2>Change Info</h2>
                 <p>Changes will be reflected to every services</p>
             </div>
             <div class="d-flex flex-column container px-5 row-gap-3">
                 
-                <div>
-
+                <div class="img-profile position-relative">
+                    <?php $photo = "../../assets/".$user->getPhoto()?>
+                    <img src=<?php echo $user->getPhoto() == "" ? "../public/devchallenges.png" : $photo ?> class="position-absolute img-profile">
+                    <input formaction="put" id="image" class="w-100 h-100 position-absolute z-3" name="photo" type="file">
+                    <label for="image">Hola</label>
                 </div>
                 <div>
                     <input type="text" class="form-control" placeholder="Enter your name" name="name">

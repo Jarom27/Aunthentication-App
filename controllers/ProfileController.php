@@ -28,6 +28,20 @@
         $user->setPassword($_POST["password"]);
         $user->setName($_POST["name"]);
         $user->setPhone($_POST["phone"]);
+        if(isset($_FILES["photo"])){
+            $directory = __DIR__."\assets\\";
+            $extension = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+            echo $_FILES["photo"]["name"];
+            $nombre_archivo_nuevo = $user->getId().".".$extension; 
+            $ubicacion_final = $directory;
+            echo $ubicacion_final;
+            if(move_uploaded_file($_FILES["photo"]["tmp_name"],'../assets/'.$nombre_archivo_nuevo)){
+                $user->setPhoto($nombre_archivo_nuevo);
+            }
+            
+        }else{
+            echo "No se subio el archivo";
+        }
         $isUpdated = $userService->updateUser($id,$user);
         if($isUpdated){
             $_SESSION["email"] = $userService->getUserEmail($id);
