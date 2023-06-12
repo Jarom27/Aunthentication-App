@@ -1,0 +1,19 @@
+RewriteEngine on
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^/$ index.php
+
+RewriteRule ^login$ controllers/LoginController.php
+RewriteRule ^signup$ controllers/SignUpController.php
+RewriteRule ^profile/(\w+)$ controllers/ProfileController.php?id=$1
+RewriteRule ^profile/(\w+)/edit$ controllers/ProfileController.php?id=$1&mode=edit
+
+#RewriteRule ^login$ Controllers/LoginController.php
+#RewriteRule ^signup$ Controllers/SignUpController.php
+
+
+
+
+#SetEnv HTTP_MY_VARIABLE "my value" para establecer variables de entorno
