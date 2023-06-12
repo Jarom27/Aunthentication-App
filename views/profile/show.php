@@ -32,7 +32,7 @@
                         <p>Photo</p>
                     </div>
                     <div class="col-8">
-                        <img src=<?php echo $user->getPhoto() == "" ? "../public/devchallenges.png" :  $user->getPhoto() ?> class="img-profile">
+                        <img src=<?php echo $user->getPhoto() == "" ? "../public/devchallenges.png" :  "../../assets/".$user->getPhoto() ?> class="img-profile">
                     </div>
                 </div>
                 <div class="row">

@@ -7,8 +7,8 @@
     <?php include("bootstrap.php")?>
 </head>
 <body>
-    <div class="container vh-100 d-flex justify-content-center align-items-center">
-        <form action="/login" method="post" class="card d-flex flex-column justify-content-center text-center px-5 py-5 rounded rounded-4" style="width: 475px;">
+    <div class="container vh-md-100 d-flex justify-content-center align-items-md-center">
+        <form action="/login" method="post" class="card d-flex flex-column justify-content-md-center text-center px-5 py-5 rounded rounded-4" style="width: 475px;">
             <div class="d-flex">
                 <img src="../public/devchallenges.svg" alt="">
             </div>

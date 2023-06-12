@@ -17,11 +17,9 @@
             </div>
             <div class="d-flex flex-column container px-5 row-gap-3">
                 
-                <div class="img-profile position-relative">
-                    <?php $photo = "../../assets/".$user->getPhoto()?>
-                    <img src=<?php echo $user->getPhoto() == "" ? "../public/devchallenges.png" : $photo ?> class="position-absolute img-profile">
-                    <input formaction="put" id="image" class="w-100 h-100 position-absolute z-3" name="photo" type="file">
-                    <label for="image">Hola</label>
+                <div class="d-flex columng-gap-3">
+                    <img src=<?php echo $user->getPhoto() == "" ? "../public/devchallenges.png" : "../../assets/".$user->getPhoto() ?> class="img-profile">
+                    <input formaction="put" id="image" class="" name="photo" type="file">
                 </div>
                 <div>
                     <input type="text" class="form-control" placeholder="Enter your name" name="name">
