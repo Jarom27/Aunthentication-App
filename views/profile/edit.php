@@ -10,8 +10,8 @@
 <body>
     <?php include("header.php")?>
     <main class="container d-flex h-100 w-100 justify-content-center align-items-center ">
-        <form id="put" action=<?php echo "/profile/".$user->getId()?> method="post" class="card profile-data" enctype="multipart/form-data">
-            <div class="card-title">
+        <form id="put" action=<?php echo "/profile/".$user->getId()?> method="post" class="card profile-data py-5" enctype="multipart/form-data">
+            <div class="card-title px-5">
                 <h2>Change Info</h2>
                 <p>Changes will be reflected to every services</p>
             </div>
@@ -36,7 +36,7 @@
                 <div>
                     <input type="password" class="form-control" placeholder="Enter your password" name="password">
                 </div>
-                <input type="submit" value="Enviar" name="PUT">
+                <input class="btn btn-primary w-25" type="submit" value="Save" name="PUT">
             </div>
             
         </form>

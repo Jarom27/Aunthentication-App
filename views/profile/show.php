@@ -1,6 +1,3 @@
-<?php
-    
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +13,7 @@
             <h1>Personal info</h1>
             <p>Basic info, like your name and photo</p>
         </div>
-        <div class="card d-flex flex-column profile-data">
+        <div class="card d-flex flex-column w-75">
             <div class="w-100 d-flex justify-content-between px-5">
                 <div class="d-flex flex-column">
                     <h2>Profile</h2>
@@ -31,7 +28,7 @@
                     <div class="col">
                         <p>Photo</p>
                     </div>
-                    <div class="col-8">
+                    <div class="col col-md-8">
                         <img src=<?php echo $user->getPhoto() == "" ? "../public/devchallenges.png" :  "../../assets/".$user->getPhoto() ?> class="img-profile">
                     </div>
                 </div>
@@ -39,7 +36,7 @@
                     <div class="col">
                         <p>Name</p>
                     </div>
-                    <div class="col-8">
+                    <div class="col col-md-8">
                         <p><?php echo $user->getName() ? $user->getName()  : "Vacio"?></p>
                     </div>
                 </div>
@@ -47,7 +44,7 @@
                     <div class="col">
                         <p>Bio</p>
                     </div>
-                    <div class="col-8">
+                    <div class="col col-md-8">
                         <p><?php echo $user->getBio() ? $user->getBio()  : "Vacio"?></p>
                     </div>
                 </div>
@@ -55,7 +52,7 @@
                     <div class="col">
                         <p>Phone</p>
                     </div>
-                    <div class="col-8">
+                    <div class="col col-md-8">
                         <p><?php echo $user->getPhone() ? $user->getPhone()  : "Vacio"?></p>
                     </div>
                 </div>
@@ -63,7 +60,7 @@
                     <div class="col">
                         <p>Email</p>
                     </div>
-                    <div class="col-8">
+                    <div class="col col-md-8">
                         <p><?php echo $user->getEmail() ? $user->getEmail()  : "Vacio"?></p>
                     </div>
                 </div>
@@ -71,7 +68,7 @@
                     <div class="col">
                         <p>Password</p>
                     </div>
-                    <div class="col-8">
+                    <div class="col col-md-8">
                         <p>************</p>
                     </div>
                 </div>
